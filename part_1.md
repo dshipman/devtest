@@ -19,7 +19,3 @@ Write a bash or PowerShell script in this repo root called `setup.sh` or `setup.
 - install the Python dependencies in requirements.txt into that virtual environment
 
 Someone else should be able to run the script after git cloning this project, assuming they have virtualenv and pip available. Your script does not need to be idempotent.
-
-### Question 1.4
-
-Merge (or rebase) the branch `conflict` into `master` so that the extra commits in `conflict` are now in `master`. Fix up the merge conflict.
