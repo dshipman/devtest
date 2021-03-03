@@ -2,7 +2,7 @@
 
 This repository is a test to be done by job candidates applying for the software developer position at EMU.
 
-This test is written with the intent that it should take ~3 hours to complete. It contains many small questions, such that getting any one question wrong isn't that big of a deal. If you can't complete a question then make a best effort and move on - comments explaining what you attempted to do and why you got stuck are appreciated.
+This test is written with the intent that it should take ~3 hours to complete. It contains many small questions, such that getting any one question wrong isn't that big of a deal. If you can't complete a question then make a best effort and move on: any comments explaining what you attempted to do and why you got stuck are appreciated.
 
 A lot of these questions are written with the assumption that you may need to search with Google to help you get an answer.
 
@@ -20,7 +20,7 @@ There are seven parts to this test:
 
 You might not be an expert in all of these things, and that's ok (neither am I), just do your best.
 
-## Part 1/7: Project setup and version control
+### Part 1/7: Project setup and version control
 
 Complete the questions contained in the following file:
 
@@ -56,7 +56,7 @@ Complete the questions contained in the following files:
 
 Complete the questions contained in the following files:
 
-- part_5.py (euler method)
+- part_5.py (Euler method)
 
 ### Part 6/7: Cloud computing
 
