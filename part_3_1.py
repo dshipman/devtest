@@ -13,12 +13,26 @@ from timer import Timer
 
 ITEMS = list(range(30000))
 
+"""
+Low hanging fruit - move max_item calc out of loop, since it is constant
+"""
+
+max_item = max(ITEMS)
+
 with Timer("Calculating sum of normalized items"):
     norm_items = []
-    for i in ITEMS:
-        max_item = max(ITEMS)
-        norm_item = i / max_item
-        norm_items.append(norm_item)
-        sum_norm = sum(norm_items)
+    
+    norm_items = [i/max_item for i in ITEMS]
+    sum_norm = sum(norm_items)
+
+"""
+    Alternatively, if we only want the end result (sum_norm), we can skip all the list operations
+
+    This returns a slightly different answer due to accumulation of floating point errors
+    (ie this answer is more "correct", but doesn't return the _same_ answer as the original 
+    implementation, so isn't quite what was asked for...)
+
+    sum_norm = sum(ITEMS) / max_item
+"""
 
 print("The sum of norm items is", sum_norm)
