@@ -42,7 +42,21 @@ results[0] = INITIAL_CONDITIONS
 for t_idx, t in enumerate(times):
     if t_idx == 0:
         continue
-
     # Solve the equation here, filling out `results`
 
+    results_t0 = results[t_idx-1]
+        
+    deltas = get_derivatives(results[t_idx-1], t)
+    results_t1 = results_t0 + deltas * STEP_SIZE
+    results[t_idx] = results_t1
+
 # Plot the results as a function of time for S, I, R respectively
+
+plt.plot(times,results[:,0])
+plt.plot(times,results[:,1])
+plt.plot(times,results[:,2])
+plt.ylabel('population')
+plt.xlabel('time')
+
+plt.title("Euler Simulation")
+plt.legend(("S","I","R"))
