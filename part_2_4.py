@@ -19,3 +19,15 @@ import matplotlib.pyplot as plt
 CSV_FILE = "data/report_2_3.csv"  # Same CSV file as the last question
 
 # Your code goes here
+
+df = pd.read_csv(CSV_FILE)
+
+df = df.set_index('time')
+
+over_20 = df[df['age'] > 20]
+
+summed_infections = df.groupby('time').sum()['daily_infections']
+
+p = summed_infections.cumsum().plot()
+
+p.figure.savefig('part_2_4.png')
