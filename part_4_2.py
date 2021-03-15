@@ -10,11 +10,17 @@ eg.
 
 """
 from checker import check_website_text
+from unittest.mock import Mock, patch
 
-def test_example():
+@patch('checker.requests.get')
+def test_example(mock_get):
     """
     Use mocking to rewrite this test so it doesn't make HTTP requests to example.com
     """
+    mock_get.return_value.ok = True
+
+    # OK, not sure what to do here to be honest!
+
     assert check_website_text("http://example.com/", "Example Domain")
     assert check_website_text("http://example.com/", "asking for permission")
     assert not check_website_text("http://example.com/", "some random text 123 123")
