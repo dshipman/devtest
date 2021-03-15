@@ -10,19 +10,27 @@ Refactor this code (by writing and re-using a function) so that this code is DRY
 POP = [4e5, 4.2e5, 6e5, 12e5, 8e5, 3.1e5, 2e5, 1e5]
 MASS = [14, 12.2, 4]
 
-# Normalize population
-total_pop = 0
-for p in POP:
-    total_pop += p
+# # Normalize population
+# total_pop = 0
+# for p in POP:
+#     total_pop += p
 
-pop_normalised = []
-for p in POP:
-    fraction = p / total_pop
-    pop_normalised.append(fraction)
+# pop_normalised = []
+# for p in POP:
+#     fraction = p / total_pop
+#     pop_normalised.append(fraction)
 
 
-# Normalize mass
-mass_normalised = [m / sum(MASS) for m in MASS]
+# # Normalize mass
+# mass_normalised = [m / sum(MASS) for m in MASS]
 
-print(pop_normalised)
-print(mass_normalised)
+def normalise(data: list):
+	"""
+	Normalise a list (ie divide by its total)
+	"""
+	
+    total = sum(data)
+    return [item/total for item in data]
+
+print(normalise(POP))
+print(normalise(MASS))
